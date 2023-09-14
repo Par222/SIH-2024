@@ -66,7 +66,7 @@ export default function Tracker() {
           <div className="p-2 grid grid-cols-2 gap-3">
             {[
               { name: 'Writing Comprehension', m: '10/30' },
-              { name: 'Communication', m: '14/15' },
+              { name: 'Communication', m: '2/5' },
               { name: 'Physics', m: '5/10' },
             ].map((el) => (
               <div className="container p-4 bg-blue-100 rounded-lg">
