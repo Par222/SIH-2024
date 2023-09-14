@@ -2,6 +2,9 @@
 import NavBar from "@/components/common/NavBar";
 import { useState } from "react";
 import { test } from "@/components/data/test";
+import GenericModal from "@/components/common/GenericModal";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 const Aptitude = () => {
   const [section, setSection] = useState({
     tab1: true,
@@ -15,7 +18,9 @@ const Aptitude = () => {
     2: "C",
     3: "D",
   };
+  const subs= ['Maths','Science' ,'Language']
   const [Langscore, setLangScore] = useState(0);
+  const [modal,setModal]=useState(false)
   const [sciscore, setsciScore] = useState(0);
   const scoreHandler = (ans, section, index) => {
     console.log(ans,test[section].questions[index].correct_answer)
@@ -30,13 +35,16 @@ const Aptitude = () => {
         setQuestion(1)
     }
       if (section == 1)
-      {  setSection({
+     {  setSection({
           tab2: false,
           tab1: false,
           tab3: true,
         });
         setQuestion(1)
     }
+    if(section==2){
+        setQuestion(10)
+     }
     }
 
     if (section == 0)
@@ -137,7 +145,7 @@ const Aptitude = () => {
                 <div className="flex flex-col font-medium items-center my-5 cursor-pointer ">
                   {test[0].questions[question - 1].options.map((option, i) => (
                     <span
-                      className="w-[80%] px-5 rounded-full border-yellow-400 text-yellow-400 border-2 my-2 text-lg py-1"
+                      className="w-[80%] px-5 rounded-full border-yellow-400 text-yellow-400 border-2 my-2 text-lg py-1 hover:bg-yellow-400 hover:text-white"
                       onClick={() => scoreHandler(option, 0, question-1)}
                     >
                       {dict[i] + ".\t\t" + option}
@@ -155,7 +163,8 @@ const Aptitude = () => {
                 </h1>
                 <div className="flex flex-col font-medium items-center my-5 ">
                   {test[1].questions[question - 1].options.map((option, i) => (
-                    <span className="w-[80%] px-5 rounded-full border-yellow-400 text-yellow-400 border-2 my-2 text-lg py-1">
+                    <span className="w-[80%] px-5 rounded-full border-yellow-400 text-yellow-400 border-2 my-2 text-lg py-1  hover:bg-yellow-400 hover:text-white"
+                    onClick={() => scoreHandler(option, 1, question-1)}>
                       {dict[i] + ".\t\t" + option}
                     </span>
                   ))}
@@ -171,16 +180,47 @@ const Aptitude = () => {
                 </h1>
                 <div className="flex flex-col font-medium items-center my-5 ">
                   {test[2].questions[question - 1].options.map((option, i) => (
-                    <span className="w-[80%] px-5 rounded-full border-yellow-400 text-yellow-400 border-2 my-2 text-lg py-1">
+                    <span className="w-[80%] px-5 rounded-full border-yellow-400 text-yellow-400 border-2 my-2 text-lg py-1  hover:bg-yellow-400 hover:text-white"
+                    onClick={() => scoreHandler(option, 2, question-1)}>
                       {dict[i] + ".\t\t" + option}
                     </span>
                   ))}
                 </div>
               </div>
             )}
+           
           </div>
+         
         </div>
-        <span className="text-lg text-black">{Mathscore}</span>
+        <div className="flex justify-end mx-10">
+                <button className="bg-yellow-600 text-white px-5 py-2 rounded-md my-3" onClick={()=>setModal(true)}>Submit</button>
+            </div>
+            {
+                modal && <GenericModal textpos="Go to Home" navigator={()=>{}} title="Test Analysis" >
+                  <div className="flex justify-between mx-4 my-5 items-center px-10">
+                  {subs.map((t,i)=><>
+                    <div className="flex flex-col items-center">
+                        <h1 className="text-sm my-3">{t} Score Analysis</h1>
+                        <CircularProgressbar
+                      value={
+                        ((t=='Maths'?Mathscore:t=='Science'?sciscore:Langscore)*10
+                      ).toFixed(0)}
+                      style={{ width: 200, height: "200px", pathColor: "yellow-400",}}
+                      strokeWidth={10}
+                      text={
+                        ((t=='Maths'?Mathscore:t=='Science'?sciscore:Langscore)*10
+                      ).toFixed(0) + "%"
+                      }
+                      className="w-[100px] h-[100px] font-semibold mb-5"
+                    ></CircularProgressbar>
+                         
+                         <p className="my-2 text-yellow-700 font-semibold font-mono">{t=='Maths'?Mathscore:t=='Science'?sciscore:Langscore} / 10  Correct</p>
+                    </div>
+                    </>)}
+                  </div>
+                </GenericModal>
+            }
+      
       </div>
     </>
   );

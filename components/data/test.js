@@ -191,4 +191,267 @@ export const test=[
           ]
         }
     ]
+    
+    export const lang=[
+        {
+          "letter": "A",
+          "words": [
+            { "word": "Apple", "translation": "सेब" },
+            { "word": "Ant", "translation": "चींटी" },
+            { "word": "Airplane", "translation": "विमान" },
+            { "word": "Arrow", "translation": "तीर" },
+            { "word": "Ambulance", "translation": "रेस्क्यू गाड़ी" }
+          ]
+        },
+        {
+          "letter": "B",
+          "words": [
+            { "word": "Banana", "translation": "केला" },
+            { "word": "Bird", "translation": "पक्षी" },
+            { "word": "Butterfly", "translation": "तितली" },
+            { "word": "Bicycle", "translation": "साइकिल" },
+            { "word": "Book", "translation": "किताब" }
+          ]
+        },
+        {
+          "letter": "C",
+          "words": [
+            { "word": "Cat", "translation": "बिल्ली" },
+            { "word": "Car", "translation": "कार" },
+            { "word": "Clock", "translation": "घड़ी" },
+            { "word": "Chocolate", "translation": "चॉकलेट" },
+            { "word": "Chair", "translation": "कुर्सी" }
+          ]
+        },
+        {
+          "letter": "D",
+          "words": [
+            { "word": "Dog", "translation": "कुत्ता" },
+            { "word": "Door", "translation": "दरवाजा" },
+            { "word": "Duck", "translation": "बत्तख़" },
+            { "word": "Diamond", "translation": "हीरा" },
+            { "word": "Dress", "translation": "ड्रेस" }
+          ]
+        },
+        {
+          "letter": "E",
+          "words": [
+            { "word": "Elephant", "translation": "हाथी" },
+            { "word": "Eagle", "translation": "गरुड़" },
+            { "word": "Egg", "translation": "अंडा" },
+            { "word": "Engine", "translation": "इंजन" },
+            { "word": "Earth", "translation": "पृथ्वी" }
+          ]
+        },
+        {
+          "letter": "F",
+          "words": [
+            { "word": "Fish", "translation": "मछली" },
+            { "word": "Frog", "translation": "मेंढ़क" },
+            { "word": "Flower", "translation": "फूल" },
+            { "word": "Fan", "translation": "पंखा" },
+            { "word": "Fire", "translation": "आग" }
+          ]
+        },
+        {
+          "letter": "G",
+          "words": [
+            { "word": "Goat", "translation": "बकरी" },
+            { "word": "Garden", "translation": "बगीचा" },
+            { "word": "Glass", "translation": "कांच" },
+            { "word": "Grass", "translation": "घास" },
+            { "word": "Guitar", "translation": "गिटार" }
+          ]
+        },
+        {
+          "letter": "H",
+          "words": [
+            { "word": "Horse", "translation": "घोड़ा" },
+            { "word": "Hat", "translation": "टोपी" },
+            { "word": "House", "translation": "घर" },
+            { "word": "Heart", "translation": "दिल" },
+            { "word": "Hand", "translation": "हाथ" }
+          ]
+        },
+        {
+          "letter": "I",
+          "words": [
+            { "word": "Ice Cream", "translation": "आइसक्रीम" },
+            { "word": "Insect", "translation": "कीट" },
+            { "word": "Island", "translation": "द्वीप" },
+            { "word": "Ink", "translation": "सियाही" },
+            { "word": "Iron", "translation": "लोहा" }
+          ]
+        },
+        {
+          "letter": "J",
+          "words": [
+            { "word": "Jacket", "translation": "जैकेट" },
+            { "word": "Juice", "translation": "रस" },
+            { "word": "Jungle", "translation": "जंगल" },
+            { "word": "Jar", "translation": "बर्तन" },
+            { "word": "Jewelry", "translation": "आभूषण" }
+          ]
+        },
+        {
+          "letter": "K",
+          "words": [
+            { "word": "Kite", "translation": "पतंग" },
+            { "word": "Key", "translation": "कुंजी" },
+            { "word": "King", "translation": "राजा" },
+            { "word": "Kangaroo", "translation": "कंगारू" },
+            { "word": "Knife", "translation": "चाकू" }
+          ]
+        },
+        {
+          "letter": "L",
+          "words": [
+            { "word": "Lion", "translation": "सिंह" },
+            { "word": "Lamp", "translation": "लैंप" },
+            { "word": "Leaf", "translation": "पत्ता" },
+            { "word": "Laptop", "translation": "लैपटॉप" },
+            { "word": "Lemon", "translation": "नींबू" }
+          ]
+        },
+        {
+          "letter": "M",
+          "words": [
+            { "word": "Monkey", "translation": "मंकी" },
+            { "word": "Mango", "translation": "आम" },
+            { "word": "Moon", "translation": "चाँद" },
+            { "word": "Mountain", "translation": "पहाड़" },
+            { "word": "Music", "translation": "संगीत" }
+          ]
+        },
+        {
+          "letter": "N",
+          "words": [
+            { "word": "Nose", "translation": "नाक" },
+            { "word": "Net", "translation": "जाल" },
+            { "word": "Nest", "translation": "घर" },
+            { "word": "Notebook", "translation": "नोटबुक" },
+            { "word": "Nail", "translation": "नाखून" }
+          ]
+        },
+        {
+          "letter": "O",
+          "words": [
+            { "word": "Orange", "translation": "संतरा" },
+            { "word": "Owl", "translation": "उल्लू" },
+            { "word": "Ocean", "translation": "समुंदर" },
+            { "word": "Octopus", "translation": "ऑक्टोपस" },
+            { "word": "Oyster", "translation": "कलवा" }
+          ]
+        },
+        {
+          "letter": "P",
+          "words": [
+            { "word": "Pencil", "translation": "पेंसिल" },
+            { "word": "Panda", "translation": "पांडा" },
+            { "word": "Pumpkin", "translation": "कद्दू" },
+            { "word": "Parrot", "translation": "तोता" },
+            { "word": "Peacock", "translation": "मोर" }
+          ]
+        },
+        {
+          "letter": "Q",
+          "words": [
+            { "word": "Queen", "translation": "रानी" },
+            { "word": "Quill", "translation": "क्विल" },
+            { "word": "Quarrel", "translation": "झगड़ा" },
+            { "word": "Question", "translation": "सवाल" },
+            { "word": "Quiet", "translation": "शांत" }
+          ]
+        },
+        {
+          "letter": "R",
+          "words": [
+            { "word": "Rabbit", "translation": "ख़रगोश" },
+            { "word": "Rain", "translation": "बारिश" },
+            { "word": "Rose", "translation": "गुलाब" },
+            { "word": "River", "translation": "नदी" },
+            { "word": "Radio", "translation": "रेडियो" }
+          ]
+        },
+        {
+          "letter": "S",
+          "words": [
+            { "word": "Sun", "translation": "सूरज" },
+            { "word": "Star", "translation": "तारा" },
+            { "word": "Ship", "translation": "जहाज़" },
+            { "word": "Snake", "translation": "सांप" },
+            { "word": "Spoon", "translation": "चम्मच" }
+          ]
+        },
+        {
+          "letter": "T",
+          "words": [
+            { "word": "Tiger", "translation": "बाघ" },
+            { "word": "Tree", "translation": "पेड़" },
+            { "word": "Train", "translation": "ट्रेन" },
+            { "word": "Table", "translation": "मेज़" },
+            { "word": "Television", "translation": "टेलीविज़न" }
+          ]
+        },
+        {
+          "letter": "U",
+          "words": [
+            { "word": "Umbrella", "translation": "छाता" },
+            { "word": "Unicorn", "translation": "एक सींग वाला घोड़ा" },
+            { "word": "Uranus", "translation": "यूरेनस" },
+            { "word": "Umbilical Cord", "translation": "नाभिसूत्र" },
+            { "word": "Uniform", "translation": "वर्दी" }
+          ]
+        },
+        {
+          "letter": "V",
+          "words": [
+            { "word": "Van", "translation": "गाड़ी" },
+            { "word": "Village", "translation": "गाँव" },
+            { "word": "Violin", "translation": "वायलिन" },
+            { "word": "Volcano", "translation": "ज्वालामुखी" },
+            { "word": "Vulture", "translation": "गिद्ध" }
+          ]
+        },
+        {
+          "letter": "W",
+          "words": [
+            { "word": "Water", "translation": "पानी" },
+            { "word": "Whale", "translation": "व्हेल" },
+            { "word": "Watch", "translation": "घड़ी" },
+            { "word": "Window", "translation": "खिड़की" },
+            { "word": "Wheel", "translation": "पहिया" }
+          ]
+        },
+        {
+          "letter": "X",
+          "words": [
+            { "word": "Xylophone", "translation": "ज़ाइलोफ़ोन" },
+            { "word": "X-ray", "translation": "एक्स-रे" },
+            { "word": "Xenon", "translation": "ज़ीनॉन" },
+            { "word": "Xerox", "translation": "ज़ेरॉक्स" },
+            { "word": "Xenophobia", "translation": "किसी अजनबी से डर" }
+          ]
+        },
+        {
+          "letter": "Y",
+          "words": [
+            { "word": "Yak", "translation": "याक" },
+            { "word": "Yacht", "translation": "याक्ट" },
+            { "word": "Yogurt", "translation": "दही" },
+            { "word": "Yo-yo", "translation": "यो-यो" },
+            { "word": "Yawn", "translation": "उबासी" }
+          ]
+        },
+        {
+          "letter": "Z",
+          "words": [
+            { "word": "Zebra", "translation": "ज़ेब्रा" },
+            { "word": "Zoo", "translation": "चिड़ियाघर" },
+            { "word": "Zero", "translation": "शून्य" },
+            { "word": "Zodiac", "translation": "राशि चक्र" },
+            { "word": "Zephyr", "translation": "मिलने वाली हवा" }
+          ]
+        }
+      ]
       
