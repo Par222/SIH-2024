@@ -1,6 +1,6 @@
 "use client";
 import NavBar from "@/components/common/NavBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { test } from "@/components/data/test";
 import GenericModal from "@/components/common/GenericModal";
 import { CircularProgressbar } from "react-circular-progressbar";
@@ -23,28 +23,25 @@ const Aptitude = () => {
   const [modal,setModal]=useState(false)
   const [sciscore, setsciScore] = useState(0);
   const scoreHandler = (ans, section, index) => {
-    console.log(ans,test[section].questions[index].correct_answer)
-    if (index < test[section].questions.length-1) setQuestion(question + 1);
+    console.log(ans, test[section].questions[index].correct_answer);
+    if (index < test[section].questions.length - 1) setQuestion(question + 1);
     else {
-      if (section == 0)
-       { setSection({
+      if (section == 0) {
+        setSection({
           tab2: true,
           tab1: false,
           tab3: false,
         });
-        setQuestion(1)
-    }
-      if (section == 1)
-     {  setSection({
+        setQuestion(1);
+      }
+      if (section == 1) {
+        setSection({
           tab2: false,
           tab1: false,
           tab3: true,
         });
-        setQuestion(1)
-    }
-    if(section==2){
-        setQuestion(10)
-     }
+        setQuestion(1);
+      }
     }
 
     if (section == 0)
@@ -59,10 +56,13 @@ const Aptitude = () => {
   };
 
   const [question, setQuestion] = useState(1);
+
+  useEffect(() => {
+    console.log("qu", test[0].questions[question - 1]);
+  }, [question]);
   return (
     <>
       <div>
-        <NavBar></NavBar>
         <div className="px-5">
           <h1 className="text-2xl font-extrabold font-sans my-3 text-yellow-400 border-b-4 border-yellow-400 py-2 w-[40%]">
             {" "}
@@ -123,6 +123,7 @@ const Aptitude = () => {
           <div className="w-[15%] cursor-pointer my-10 flex flex-wrap mx-5 font-semibold shadow-md py-6 px-2 ">
             {test[0].questions.map((q, i) => (
               <span
+                key={q}
                 onClick={() => setQuestion(i + 1)}
                 className={
                   question == i + 1
@@ -140,13 +141,14 @@ const Aptitude = () => {
                 <h1 className="text-lg bg-yellow-600 font-mono font-medium text-white py-2 px-4 text-center">
                   {test[0].questions[question - 1].question_number +
                     ".\t" +
-                    test[0].questions[question - 1].question}{" "}
+                    test[0].questions[question - 1].question}
                 </h1>
                 <div className="flex flex-col font-medium items-center my-5 cursor-pointer ">
                   {test[0].questions[question - 1].options.map((option, i) => (
                     <span
-                      className="w-[80%] px-5 rounded-full border-yellow-400 text-yellow-400 border-2 my-2 text-lg py-1 hover:bg-yellow-400 hover:text-white"
-                      onClick={() => scoreHandler(option, 0, question-1)}
+                      key={i}
+                      className="w-[80%] px-5 rounded-full border-yellow-400 text-yellow-400 border-2 my-2 text-lg py-1"
+                      onClick={() => scoreHandler(option, 0, question - 1)}
                     >
                       {dict[i] + ".\t\t" + option}
                     </span>
@@ -159,12 +161,15 @@ const Aptitude = () => {
                 <h1 className="text-lg bg-yellow-600 font-mono font-medium text-white py-2 px-4 text-center">
                   {test[1].questions[question - 1].question_number +
                     ".\t" +
-                    test[1].questions[question - 1].question}{" "}
+                    test[1].questions[question - 1].question}
                 </h1>
                 <div className="flex flex-col font-medium items-center my-5 ">
                   {test[1].questions[question - 1].options.map((option, i) => (
-                    <span className="w-[80%] px-5 rounded-full border-yellow-400 text-yellow-400 border-2 my-2 text-lg py-1  hover:bg-yellow-400 hover:text-white"
-                    onClick={() => scoreHandler(option, 1, question-1)}>
+                    <span
+                      key={i}
+                      className="w-[80%] px-5 rounded-full border-yellow-400 text-yellow-400 border-2 my-2 text-lg py-1"
+                      translate={question == 1 ? "no" : "yes"}
+                    >
                       {dict[i] + ".\t\t" + option}
                     </span>
                   ))}
@@ -176,12 +181,14 @@ const Aptitude = () => {
                 <h1 className="text-lg bg-yellow-600 font-mono font-medium text-white py-2 px-4 text-center">
                   {test[2].questions[question - 1].question_number +
                     ".\t" +
-                    test[2].questions[question - 1].question}{" "}
+                    test[2].questions[question - 1].question}
                 </h1>
                 <div className="flex flex-col font-medium items-center my-5 ">
                   {test[2].questions[question - 1].options.map((option, i) => (
-                    <span className="w-[80%] px-5 rounded-full border-yellow-400 text-yellow-400 border-2 my-2 text-lg py-1  hover:bg-yellow-400 hover:text-white"
-                    onClick={() => scoreHandler(option, 2, question-1)}>
+                    <span
+                      key={i}
+                      className="w-[80%] px-5 rounded-full border-yellow-400 text-yellow-400 border-2 my-2 text-lg py-1"
+                    >
                       {dict[i] + ".\t\t" + option}
                     </span>
                   ))}
