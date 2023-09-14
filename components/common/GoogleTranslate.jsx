@@ -69,7 +69,7 @@ function GoogleTranslate(props) {
         }}
       ></div>
 
-      <select value={selected} onChange={langChange} translate="no">
+      <select value={selected} onChange={langChange} translate="no" className="bg-yellow-400 text-white text-lg font-medium">
         {languages?.map((language) => {
           return (
             <option value={language?.label} key={language}>

@@ -169,6 +169,7 @@ const Aptitude = () => {
                       key={i}
                       className="w-[80%] px-5 rounded-full border-yellow-400 text-yellow-400 border-2 my-2 text-lg py-1"
                       translate={question == 1 ? "no" : "yes"}
+                      onClick={() => scoreHandler(option, 1, question - 1)}
                     >
                       {dict[i] + ".\t\t" + option}
                     </span>
@@ -187,7 +188,9 @@ const Aptitude = () => {
                   {test[2].questions[question - 1].options.map((option, i) => (
                     <span
                       key={i}
+                      
                       className="w-[80%] px-5 rounded-full border-yellow-400 text-yellow-400 border-2 my-2 text-lg py-1"
+                      onClick={() => scoreHandler(option, 2, question - 1)}
                     >
                       {dict[i] + ".\t\t" + option}
                     </span>

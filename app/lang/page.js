@@ -1,7 +1,6 @@
 "use client";
 import NavBar from "@/components/common/NavBar";
 import { useEffect, useState } from "react";
-import Iframe from "react-iframe";
 import 'regenerator-runtime/runtime'
 import { lang } from "@/components/data/test";
 import axios from "axios";
@@ -86,10 +85,9 @@ const Lang = () => {
   const [allWords, setAllWords] = useState([]);
   return (
     <>
-      <NavBar></NavBar>
       <div>
         <h1 className="font-bold text-yellow-600 border-b-4 mx-4 border-yellow-600 text-2xl py-3 font-mono  w-[30%]">
-          Lets learn the Lanuage
+          Lets learn the Language
         </h1>
         <p className="text-base my-2 mx-5 font-bold">
           What do you want to get better at?
@@ -126,7 +124,7 @@ const Lang = () => {
         {tab.tab1 && (
           <>
             <div className="my-5 mx-10 flex space-x-5 ">
-              <div className="w-[40%]">
+              <div className="w-[40%] ">
                 <iframe
                   width="560"
                   height="315"
@@ -179,13 +177,13 @@ const Lang = () => {
                   <form className="flex flex-col" onSubmit={submitHandler}>
                     <input
                       placeholder="Type a new word .."
-                      className="my-4 w-[60%] focus:outline-none py-2 text-sm pr-3 border-b-2 border-yellow-600"
+                      className="my-4 w-[60%] bg-gray-200 focus:outline-none py-2 text-sm pr-3 border-b-2 border-yellow-600"
                       value={word}
                       onChange={(e) => setWord(e.target.value)}
                     ></input>
                     <select
                       onChange={(e) => setLang(e.target.value)}
-                      className="mt-1 mb-4 w-[60%] focus:outline-none py-2 text-sm pr-3 border-b-2 border-yellow-600"
+                      className="mt-1 mb-4 w-[60%] bg-gray-200 focus:outline-none py-2 text-sm pr-3 border-b-2 border-yellow-600"
                     >
                       {languages.map((l) => (
                         <option value={l}>{l}</option>
@@ -254,13 +252,13 @@ const Lang = () => {
                   <form className="flex flex-col" onSubmit={submitHandler1}>
                     <input
                       placeholder="Type a new word .."
-                      className="my-4 w-[60%] focus:outline-none py-2 text-sm pr-3 border-b-2 border-yellow-600"
+                      className="my-4 w-[60%] bg-gray-200 focus:outline-none py-2 text-sm pr-3 border-b-2 border-yellow-600"
                       value={word}
                       onChange={(e) => setWord(e.target.value)}
                     ></input>
                     <select
                       onChange={(e) => setLang(e.target.value)}
-                      className="mt-1 mb-4 w-[60%] focus:outline-none py-2 text-sm pr-3 border-b-2 border-yellow-600"
+                      className="mt-1 mb-4 w-[60%] bg-gray-200 focus:outline-none py-2 text-sm pr-3 border-b-2 border-yellow-600"
                     >
                       {languages.map((l) => (
                         <option value={l}>{l}</option>
@@ -325,7 +323,7 @@ const Lang = () => {
                   <form className="flex flex-col" onSubmit={submitHandler2}>
                     <select
                       onChange={(e) => setSpeaker(e.target.value)}
-                      className="mt-1 mb-4 w-[60%] focus:outline-none py-2 text-sm pr-3 border-b-2 border-yellow-600"
+                      className="mt-1 mb-4 w-[60%] bg-gray-200 focus:outline-none py-2 text-sm pr-3 border-b-2 border-yellow-600"
                     >
                       {convo.map((l) => (
                         <option value={l}>{l}</option>
