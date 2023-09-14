@@ -2,8 +2,11 @@
 import NavBar from "@/components/common/NavBar";
 import { useEffect, useState } from "react";
 import Iframe from "react-iframe";
+import 'regenerator-runtime/runtime'
 import { lang } from "@/components/data/test";
 import axios from "axios";
+import BotIcon from "@/public/bot/botIcons/BotIcon";
+import Bot from "@/components/bot/Bot";
 const Lang = () => {
   const [tab, setTab] = useState({ tab1: true, tab2: false, tab3: false });
   const [alphabet, setAlphabet] = useState("A");
@@ -48,6 +51,19 @@ const Lang = () => {
     );
     setSentence(response.data);
   };
+  const submitHandler2 = (e) => {
+    e.preventDefault()
+    setShowBot(true)
+
+  };
+  const convo = [
+    "Shopkeeper",
+    "Sports Coach",
+    "Teacher",
+    "Friend",
+    "Colleague",
+  ];
+  const [speaker,setSpeaker]=useState('')
   const fetchImage = async () => {
     const formData = new FormData();
     formData.append("word", sentence);
@@ -60,11 +76,13 @@ const Lang = () => {
     );
     setTsent(response.data);
   };
+  const [showBot, setShowBot] = useState(false);
   useEffect(() => {
     if (sentence != "") {
       fetchImage();
     }
   }, [sentence]);
+  const [conv, setConvo] = useState("");
   const [allWords, setAllWords] = useState([]);
   return (
     <>
@@ -76,7 +94,7 @@ const Lang = () => {
         <p className="text-base my-2 mx-5 font-bold">
           What do you want to get better at?
         </p>
-        <div className="my-1 mx-5 flex space-x-5">
+        <div className="my-1 mx-5 flex space-x-5 cursor-pointer">
           <span
             className="rounded-md py-1 px-3 bg-gray-400 text-white my-4"
             onClick={() => {
@@ -95,7 +113,13 @@ const Lang = () => {
           >
             Learning Sentences
           </span>
-          <span className="rounded-md py-1 px-3 bg-gray-400 text-white my-4">
+          <span
+            className="rounded-md py-1 px-3 bg-gray-400 text-white my-4"
+            onClick={() => {
+              setTab({ tab1: false, tab2: false, tab3: true });
+              setImage("");
+            }}
+          >
             Conversation
           </span>
         </div>
@@ -276,6 +300,55 @@ const Lang = () => {
                     </div>
                   </>
                 )}
+              </div>
+            </div>
+          </>
+        )}
+        {tab.tab3 && (
+          <>
+            <div className="my-5 mx-10 flex space-x-5 items-center ">
+              <div className="w-[40%]">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/SEO9YPzSH-0?si=fYt737Kz-S3gHUOt"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div className=" w-[60%]">
+                <div className="px-5">
+                  <p className="my-3 text-sm">Select a converation scenario</p>
+
+                  <form className="flex flex-col" onSubmit={submitHandler2}>
+                    <select
+                      onChange={(e) => setSpeaker(e.target.value)}
+                      className="mt-1 mb-4 w-[60%] focus:outline-none py-2 text-sm pr-3 border-b-2 border-yellow-600"
+                    >
+                      {convo.map((l) => (
+                        <option value={l}>{l}</option>
+                      ))}
+                    </select>
+
+                    <button
+                      type="submit"
+                      className="bg-yellow-400 w-[20%] rounded-md py-1 text-white"
+                    >
+                      Start Conversation
+                    </button>
+                  </form>
+                  {
+                    <div
+                      className="cursor-pointer ml-10 flex justify-end my-4 mx-5"
+                      onClick={() => setShowBot(!showBot)}
+                    >
+                      <BotIcon fill="#000"></BotIcon>
+                    </div>
+                  }
+                  {<Bot showBot={showBot} setShowBot={setShowBot} person={speaker}></Bot>}
+                </div>
               </div>
             </div>
           </>
