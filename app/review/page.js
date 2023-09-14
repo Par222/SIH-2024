@@ -76,11 +76,11 @@ export default function review() {
             return (
               <>
                 {/* <hr className="mb-4 w-1/2  mx-auto border-1 bg-grey border-grey "></hr> */}
-                <div className="flex gap-2 mb-5 border-1 shadow-md p-2 pt-4 rounded-md">
-                  <div className=" flex mx-auto px-2">
+                <div className="flex gap-2 mb-5 inline-block sm:w-full md:w-full lg:w-1/2 mx-auto border-1 shadow-md p-2 pt-4 rounded-md ">
+                  <div className=" flex  gap-2 px-2 justify-stretch w-full">
                     <div className="pt-2">Q.{index + 1}</div>
-                    <div>
-                      <div className="ml-2 mb-4 text-sm rounded-md bg-blue-400 font-sm text-white py-2 px-2 ">
+                    <div className="w-full">
+                      <div className="ml-2 mb-4 text-sm rounded-md bg-blue-400 font-sm text-white py-2 px-2">
                         {el.questionTitle}
                       </div>
 
