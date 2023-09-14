@@ -2,11 +2,9 @@ import { faBars, faHouse } from '@fortawesome/free-solid-svg-icons';
 // import { faHouse, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import NavBar from '@/components/common/NavBar';
 export default function Tracker() {
   return (
     <div>
-      <NavBar />
       <div className="p-4 flex-col">
         <div className="p-2">
           <div className="font-bold text-lg mb-2">Skill Progress</div>

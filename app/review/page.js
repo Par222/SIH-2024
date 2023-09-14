@@ -1,7 +1,6 @@
 import { faBars, faHouse } from '@fortawesome/free-solid-svg-icons';
 // import { faHouse, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import NavBar from '@/components/common/NavBar';
 
 const questions = [
   {
@@ -65,7 +64,6 @@ const questions = [
 export default function review() {
   return (
     <div>
-      <NavBar />
       <div className="p-4 mt-2">
         <div className="font-bold text-lg flex justify-between">
           <div>Communication Skills</div>
