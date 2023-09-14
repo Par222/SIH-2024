@@ -2,24 +2,11 @@ import { faBars, faHouse } from '@fortawesome/free-solid-svg-icons';
 // import { faHouse, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
+import NavBar from '@/components/common/NavBar';
 export default function Tracker() {
   return (
     <div>
-      <nav className="bg-[#FFCB37] p-4 px-6 w-full shadow-md position-absolute">
-        <div className="container mx-auto">
-          <div className="flex justify-between">
-            <div href="/tracker" className="cursor-pointer">
-              <FontAwesomeIcon icon={faHouse} />
-            </div>
-            <div href="/tracker" className="ml-auto">
-              <FontAwesomeIcon
-                icon={faBars}
-                className="align-self-end text-black"
-              />
-            </div>
-          </div>
-        </div>
-      </nav>
+      <NavBar />
       <div className="p-4 flex-col">
         <div className="p-2">
           <div className="font-bold text-lg mb-2">Skill Progress</div>
