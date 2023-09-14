@@ -76,9 +76,14 @@ function Page({ params }) {
         <p>{scholarship?.description}</p>
       </div>
       <div className="flex justify-between items-center mb-6">
-        <button className="text-sm font-medium px-4 py-2 bg-orange-400 rounded-md text-white">
+        <a
+          className="text-sm font-medium px-4 py-2 bg-orange-400 rounded-md text-white"
+          target="_blank"
+          href={scholarship?.application_link}
+          rel="noopener noreferrer"
+        >
           Apply Now
-        </button>
+        </a>
         <div className="text-sm font-medium space-y-2">
           {importantDates?.map((date) => {
             const index = date?.indexOf("-");
@@ -170,9 +175,14 @@ function Page({ params }) {
           })}
         </ul>
       </div>
-      <button className="text-sm font-medium px-4 py-2 bg-orange-400 rounded-md text-white">
+      <a
+        className="text-sm font-medium px-4 py-2 bg-orange-400 rounded-md text-white"
+        target="_blank"
+        href={scholarship?.application_link}
+        rel="noopener noreferrer"
+      >
         Apply Now
-      </button>
+      </a>
     </div>
   );
 }

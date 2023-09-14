@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import NavBar from "@/components/common/NavBar";
+import GoogleTranslate from "@/components/common/GoogleTranslate";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-gray-200">
         <NavBar />
+        <GoogleTranslate />
         <div className="">{children}</div>
       </body>
     </html>
